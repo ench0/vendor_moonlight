@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(wildcard $(LOCAL_DIR)/vanir_*.mk)
+    $(wildcard $(LOCAL_DIR)/moonlight_*.mk)
