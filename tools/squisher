@@ -1,12 +1,12 @@
 #!/bin/bash
 #
-# Squish a Vanir otapackage for distribution
+# Squish a MoonLight otapackage for distribution
 # credit for original version: CM
 #
 
 export ANDROID_BUILD_TOP=$ANDROID_BUILD_TOP
 
-. $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
+. $ANDROID_BUILD_TOP/vendor/moonlight/tools/functions
 
 if [ -z "$OUT" -o ! -d "$OUT" ]; then
     echo -e $CL_RED"ERROR: $0 only works with a full build environment. $OUT should exist."$CL_RST

@@ -1,5 +1,5 @@
 import /init.superuser.rc
-import /init.vanir.quickboot.rc
+import /init.moonlight.quickboot.rc
 import /init.prebundle.rc
 
 on init

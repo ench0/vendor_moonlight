@@ -1,14 +1,14 @@
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/moonlight/overlay/common
 
 #optional theme files
-PRODUCT_PACKAGE_OVERLAYS += vendor/vanir/overlay/theme
+PRODUCT_PACKAGE_OVERLAYS += vendor/moonlight/overlay/theme
 
 # DSPManager and NFC
-$(call inherit-product, vendor/vanir/products/media_sexificators.mk)
-$(call inherit-product, vendor/vanir/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/moonlight/products/media_sexificators.mk)
+$(call inherit-product, vendor/moonlight/config/nfc_enhanced.mk)
 
 # Add some tones (if this grows to more than like... 5 ringtones and 5 notifications, old ones will be dropped)
-$(call inherit-product, vendor/vanir/proprietary/ringtones/VanirRingtones.mk)
+$(call inherit-product, vendor/moonlight/proprietary/ringtones/MoonLightRingtones.mk)
 
 # Build packages included in manifest
 PRODUCT_PACKAGES += \
@@ -19,15 +19,15 @@ PRODUCT_PACKAGES += \
     Email \
     Launcher3 \
     LiveWallpapersPicker \
-    VanirUpdater
+    MoonLightUpdater
 
 # QuickBoot (included automagically for non-oppo qcom devices)
 PRODUCT_PACKAGES += \
     QuickBoot \
-    init.vanir.quickboot.rc
+    init.moonlight.quickboot.rc
 
-Vanir_Version=5.0.2
-Vanir_BUILD=$(Vanir_Version)
+MoonLight_Version=5.0.2
+MoonLight_BUILD=$(MoonLight_Version)
 
 ifeq ($(RELEASE),)
 ifneq ($(FORCE_BUILD_DATE),)
@@ -35,7 +35,7 @@ BUILD_DATE:=.$(FORCE_BUILD_DATE)
 else
 BUILD_DATE:=$(shell date +".%m%d%y")
 endif
-Vanir_BUILD=$(Vanir_Version)$(BUILD_DATE)
+MoonLight_BUILD=$(MoonLight_Version)$(BUILD_DATE)
 endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -58,9 +58,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Hydra.ogg \
     ro.config.notification_sound=Proxima.ogg \
     ro.config.alarm_alert=Alarm_Beep_03.ogg \
-    ro.modversion=$(Vanir_BUILD) \
-    ro.goo.version=$(Vanir_BUILD) \
-    ro.rommanager.developerid=vanir \
+    ro.modversion=$(MoonLight_BUILD) \
+    ro.goo.version=$(MoonLight_BUILD) \
+    ro.rommanager.developerid=moonlight \
     wifi.supplicant_scan_interval=300 \
     persist.sys.root_access=3 \
     persist.sys.purgeable_assets=1 \
@@ -69,7 +69,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # nomnomnom
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
-ifeq ($(VANIR_FAILSAFE),)
+ifeq ($(MOONLIGHT_FAILSAFE),)
 # Build.Prop Tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
     mot.proximity.delay=20 \
@@ -78,7 +78,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20 \
     pm.sleep_mode=0 \
     ro.config.nocheckin=1 \
-    ro.goo.developerid=vanir \
+    ro.goo.developerid=moonlight \
     ro.kernel.android.checkjni=0 \
     ro.kernel.checkjni=0 \
     ro.lge.proximity.delay=20
@@ -88,65 +88,65 @@ endif
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=LRX22G BUILD_ID=LRX22G BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_EST_DATE=$(shell date +"%s")
 
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/xbin/sysrw:system/xbin/sysrw \
-    vendor/vanir/proprietary/common/xbin/sysro:system/xbin/sysro \
-    vendor/vanir/proprietary/common/xbin/vanirinteractivegovernorgovernor:system/xbin/vanirinteractivegovernorgovernor \
-    vendor/vanir/proprietary/common/xbin/vanirflash:system/xbin/vanirflash \
-    vendor/vanir/proprietary/common/init.vanir.rc:root/init.vanir.rc \
-    vendor/vanir/proprietary/common/bin/otasigcheck.sh:system/bin/otasigcheck.sh \
-    vendor/vanir/proprietary/common/bin/sysinit:system/bin/sysinit \
-    vendor/vanir/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties
+    vendor/moonlight/proprietary/common/xbin/sysrw:system/xbin/sysrw \
+    vendor/moonlight/proprietary/common/xbin/sysro:system/xbin/sysro \
+    vendor/moonlight/proprietary/common/xbin/moonlightinteractivegovernorgovernor:system/xbin/moonlightinteractivegovernorgovernor \
+    vendor/moonlight/proprietary/common/xbin/moonlightflash:system/xbin/moonlightflash \
+    vendor/moonlight/proprietary/common/init.moonlight.rc:root/init.moonlight.rc \
+    vendor/moonlight/proprietary/common/bin/otasigcheck.sh:system/bin/otasigcheck.sh \
+    vendor/moonlight/proprietary/common/bin/sysinit:system/bin/sysinit \
+    vendor/moonlight/proprietary/common/etc/init.d/00firsties:system/etc/init.d/00firsties
 
-ifeq ($(VANIR_FAILSAFE),)
+ifeq ($(MOONLIGHT_FAILSAFE),)
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/bin/fix_permissions:system/bin/fix_permissions \
-    vendor/vanir/proprietary/common/xbin/hunter:system/xbin/hunter \
-    vendor/vanir/proprietary/common/xbin/testinitd:system/xbin/testinitd \
-    vendor/vanir/proprietary/common/xbin/vanircheckcpu:system/xbin/vanircheckcpu \
-    vendor/vanir/proprietary/common/xbin/vanirnice:system/xbin/vanirnice
+    vendor/moonlight/proprietary/common/bin/fix_permissions:system/bin/fix_permissions \
+    vendor/moonlight/proprietary/common/xbin/hunter:system/xbin/hunter \
+    vendor/moonlight/proprietary/common/xbin/testinitd:system/xbin/testinitd \
+    vendor/moonlight/proprietary/common/xbin/moonlightcheckcpu:system/xbin/moonlightcheckcpu \
+    vendor/moonlight/proprietary/common/xbin/moonlightnice:system/xbin/moonlightnice
 
 # Misc Files
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
+    vendor/moonlight/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
 
 # Keyboard Files
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/vanir/proprietary/common/lib/libjni_latinime.so:system/lib/libjni_latinimegoogle.so
+    vendor/moonlight/proprietary/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
+    vendor/moonlight/proprietary/common/lib/libjni_latinime.so:system/lib/libjni_latinimegoogle.so
 
 # proprietary guts
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/vanir/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/moonlight/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/moonlight/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # init.d Tweaks
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
-    vendor/vanir/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
-    vendor/vanir/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
-    vendor/vanir/proprietary/common/etc/init.d/99vanir:system/etc/init.d/99vanir \
-    vendor/vanir/proprietary/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/vanir/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
-    vendor/vanir/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
+    vendor/moonlight/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
+    vendor/moonlight/proprietary/common/etc/init.d/09cron:system/etc/init.d/09cron \
+    vendor/moonlight/proprietary/common/etc/init.d/98SONIC_SHOCK:system/etc/init.d/98SONIC_SHOCK \
+    vendor/moonlight/proprietary/common/etc/init.d/99moonlight:system/etc/init.d/99moonlight \
+    vendor/moonlight/proprietary/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/moonlight/proprietary/common/etc/cron/cron.minutely/00nicetweaks:/system/etc/cron/cron.minutely/00nicetweaks \
+    vendor/moonlight/proprietary/common/etc/cron/cron.daily/00sqlitespeed:/system/etc/cron/cron.daily/00sqlitespeed
 
 # system and persistent /data boot.d Tweaks - triggered when ro.boot_complete is set to 1
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/bin/afterboot:system/bin/afterboot \
-    vendor/vanir/proprietary/common/etc/boot.d/00vanirnice:system/etc/boot.d/00vanirnice
+    vendor/moonlight/proprietary/common/bin/afterboot:system/bin/afterboot \
+    vendor/moonlight/proprietary/common/etc/boot.d/00moonlightnice:system/etc/boot.d/00moonlightnice
 
 # Backup Tools
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/bin/automagic.sh:system/bin/automagic.sh \
-    vendor/vanir/proprietary/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/vanir/proprietary/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/vanir/proprietary/common/bin/50-vanir.sh:system/addon.d/50-vanir.sh \
-    vendor/vanir/proprietary/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/vanir/proprietary/common/bin/whitelist:system/addon.d/whitelist
+    vendor/moonlight/proprietary/common/bin/automagic.sh:system/bin/automagic.sh \
+    vendor/moonlight/proprietary/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/moonlight/proprietary/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/moonlight/proprietary/common/bin/50-moonlight.sh:system/addon.d/50-moonlight.sh \
+    vendor/moonlight/proprietary/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/moonlight/proprietary/common/bin/whitelist:system/addon.d/whitelist
 endif
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/vanir/overlay/dictionaries
+    vendor/moonlight/overlay/dictionaries
 
 # Required CM packages
 PRODUCT_PACKAGES += \
@@ -228,7 +228,7 @@ PRODUCT_PACKAGES += \
     ThemesProvider
 
 PRODUCT_COPY_FILES += \
-    vendor/vanir/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml
+    vendor/moonlight/config/permissions/org.cyanogenmod.theme.xml:system/etc/permissions/org.cyanogenmod.theme.xml
 
 ## STREAMING DMESG?
 PRODUCT_PACKAGES += \
@@ -241,5 +241,5 @@ PRODUCT_PACKAGES += \
 
 -include vendor/cyngn/product.mk
 
-$(call inherit-product-if-exists, vendor/vanir-private/Private.mk)
+$(call inherit-product-if-exists, vendor/moonlight-private/Private.mk)
 $(call inherit-product-if-exists, vendor/extra/product.mk)

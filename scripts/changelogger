@@ -13,7 +13,7 @@ else
   d=`date +"%y%m%d"`
   logd=`date +"%m%d%y"`
 fi
-CHANGELOGOUT=$ANDROID_BUILD_TOP/CHANGELOGS/vanir_$logd
+CHANGELOGOUT=$ANDROID_BUILD_TOP/CHANGELOGS/moonlight_$logd
 echo "" > $CHANGELOGOUT
 ln -sf $CHANGELOGOUT $ANDROID_BUILD_TOP/CHANGES.LOG
 logit()
@@ -45,8 +45,8 @@ if [ `git remote -v | grep $remote | grep -v aosp | wc -l` -gt 0 ]; then
       prev=`git tag | sort -uh | grep -x '[0-9][0-9]*' | grep -v "$d"  | tail -n 1`
       if [ $prev ] && [ `echo $prev | wc -w` -eq 1 ]; then
         lastversion="$prev"
-      elif [ `git tag | sort -uh | grep vanir_ | wc -l` -gt 0 ]; then
-        lastversion="`git tag | sort -uh | grep vanir_ | tail -n 1`"
+      elif [ `git tag | sort -uh | grep moonlight_ | wc -l` -gt 0 ]; then
+        lastversion="`git tag | sort -uh | grep moonlight_ | tail -n 1`"
       else
         lastversion=m/$version
       fi

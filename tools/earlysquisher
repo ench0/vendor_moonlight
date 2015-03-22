@@ -1,6 +1,6 @@
 #!/bin/bash
 export ANDROID_BUILD_TOP=$ANDROID_BUILD_TOP
-. $ANDROID_BUILD_TOP/vendor/vanir/tools/functions
+. $ANDROID_BUILD_TOP/vendor/moonlight/tools/functions
 
 pushd $1
 

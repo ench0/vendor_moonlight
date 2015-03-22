@@ -1,4 +1,4 @@
-# /init.vanir.quickboot.rc
+# /init.moonlight.quickboot.rc
 # required services and triggers for Qualcomm's QuickBoot
 
 service qbcharger /charger -m 1

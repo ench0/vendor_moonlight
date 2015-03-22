@@ -16,10 +16,10 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vanir.theme.inverted" >
+    package="com.moonlight.theme.inverted" >
 
-    <application android:hasCode="false" android:icon="@drawable/ic_launcher" android:label="Vanir Inverted" />
-    <meta-data android:name="org.cyanogenmod.theme.name" android:value="Vanir - Inverted"/>
+    <application android:hasCode="false" android:icon="@drawable/ic_launcher" android:label="MoonLight Inverted" />
+    <meta-data android:name="org.cyanogenmod.theme.name" android:value="MoonLight - Inverted"/>
     <meta-data android:name="org.cyanogenmod.theme.author" android:value="styr" />
 
 </manifest>

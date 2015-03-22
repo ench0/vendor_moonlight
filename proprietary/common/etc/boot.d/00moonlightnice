@@ -1,0 +1,11 @@
+#!/system/bin/sh
+# Nice Tweaks
+# PrimeDirective and Sonicxml
+# Thanks to mike1986 for the wait for boot code
+
+echo Boot completed... moonlightnice-ing like a bauss
+moonlightnice
+
+echo "                MoonLight                        "
+
+

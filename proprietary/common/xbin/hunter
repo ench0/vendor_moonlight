@@ -1,6 +1,6 @@
 #!/system/xbin/bash
 # DHO
-# Menu structure based on Vanir script
+# Menu structure based on MoonLight script
 
 menu()
 {

@@ -14,12 +14,12 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.
  -->
-<manifest package="com.vanir.theme.vanir442_bootanimation"
+<manifest package="com.moonlight.theme.moonlight442_bootanimation"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <application android:label="Vanir 4.4.2 BootAnimation" android:icon="@drawable/ic_launcher" android:hasCode="false" />
-    <meta-data android:name="org.cyanogenmod.theme.name" android:value="Vanir 4.4.2 BootAnimation" />
-    <meta-data android:name="org.cyanogenmod.theme.author" android:value="VanirAOSP" />
+    <application android:label="MoonLight 4.4.2 BootAnimation" android:icon="@drawable/ic_launcher" android:hasCode="false" />
+    <meta-data android:name="org.cyanogenmod.theme.name" android:value="MoonLight 4.4.2 BootAnimation" />
+    <meta-data android:name="org.cyanogenmod.theme.author" android:value="MoonLightAOSP" />
 
 </manifest>

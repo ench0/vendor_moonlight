@@ -1,0 +1,4 @@
+#!/system/bin/sh
+which moonlighttweakapply && logwrapper bash -c "moonlighttweakapply
+echo \"DONE\""
+exit 0

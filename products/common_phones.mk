@@ -1,17 +1,17 @@
-# Vanir common
-$(call inherit-product, vendor/vanir/products/common.mk)
+# MoonLight common
+$(call inherit-product, vendor/moonlight/products/common.mk)
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/moonlight/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Selective SPN list for operator number who has the problem. 
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/moonlight/proprietary/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
 # World SPN overrides list
 PRODUCT_COPY_FILES += \
-    vendor/vanir/proprietary/common/etc/spn-conf.xml:system/etc/spn-conf.xml
+    vendor/moonlight/proprietary/common/etc/spn-conf.xml:system/etc/spn-conf.xml
 
 # SIM Toolkit
 PRODUCT_PACKAGES += \

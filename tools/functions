@@ -1,5 +1,5 @@
 #!/bin/bash
-# Common functions for Vanir otatools
+# Common functions for MoonLight otatools
 #
 # cdesai
 
@@ -34,4 +34,4 @@ else
    export SED=gsed
 fi
 
-export OPTICHARGER=$ANDROID_BUILD_TOP/vendor/vanir/tools/opticharger
+export OPTICHARGER=$ANDROID_BUILD_TOP/vendor/moonlight/tools/opticharger
