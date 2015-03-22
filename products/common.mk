@@ -18,8 +18,8 @@ PRODUCT_PACKAGES += \
     busybox \
     Email \
     Launcher3 \
-    LiveWallpapersPicker \
-    MoonLightUpdater
+#    MoonLightUpdater \
+    LiveWallpapersPicker
 
 # QuickBoot (included automagically for non-oppo qcom devices)
 PRODUCT_PACKAGES += \
